@@ -1,28 +1,148 @@
-.App {
-  text-align: center;
+body {
+  background: #000639;
+  font-family: Helvetica, sans-serif;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+#root{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.App{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: flex-start;
+  height: 100vh;
+  flex-wrap: wrap;
+  width: 40%;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   color: white;
+  margin-top: 8%;
 }
 
-.App-title {
-  font-size: 1.5em;
+.App-header > h1 {
+  font-size: 24px;
 }
 
-.App-intro {
-  font-size: large;
+.divider-line {
+  background: #7AB55C;
+  width: 2.5em;
+  height: 0.3em;
+  align-self: flex-start;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.inline{
+  display: inline-block;
+}
+
+/******************/
+
+.input-form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: white;
+  font-size: 16px;
+  flex-wrap: wrap;
+  padding: 8% 0;
+}
+
+
+.input-title {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+
+}
+
+.input-email{
+  width: 60%;
+}
+
+
+.input-interest{
+  width:37%;
+}
+
+.ui.dropdown:not(.button)>.default.text, .ui.input input::placeholder {
+  color: #7B7B7B !important;
+}
+
+.input-button{
+  padding-top: 2.5%;
+  width: 100%;
+}
+
+.input-error{
+  padding-top: 8px;
+  color: #C23628;
+}
+
+.input-button-object{
+  color: white !important;
+  background: #5c6ac4 !important;
+  font-size: 16px !important;
+  padding: 15px !important;
+}
+
+.loading-button {
+  padding-top: 2.5%;
+  width: 100%;
+}
+
+.loading-button-object {
+  color: white !important;
+  background: #5c6ac4 !important;
+  font-size: 16px !important;
+  padding: 15px !important;
+}
+
+.submitted {
+  color: white;
+  padding: 8% 0;
+  flex-direction: column;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.shake {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 0.5s;
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translateX(2px) }
+  20% { transform: translateX(-2px) }
+  40% { transform: translate(2px) }
+  60% { transform: translate(-2px) }
+  80% { transform: translate(2px) }
+  100% { transform: translate(-2px) }
+}
+
+
+@media (max-width: 1035px){
+  .input-form{
+    flex-direction: column;
+    width: 80%;
+  }
+
+  .input-email, .input-interest{
+    width: 100%;
+  }
+  .App{
+    width: 60%;
+  }
+
 }
