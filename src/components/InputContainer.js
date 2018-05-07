@@ -77,17 +77,35 @@ class InputContainer extends Component {
 
     render(){
         let options = [
+            {text: 'Marketing', value: 'marketing'},
             {text: 'Ecommerce Marketing', value: 'ecom-marketing'},
             {text: 'Email Marketing', value:'email-marketing'},
-            {text: 'Local SEO', value: 'local-seo'},
-            {text: 'SERP Strategies', value: 'serp-strategies'}
+            {text: 'Local SEO', value: 'local-seo'}
         ];
 
         if(this.state.isLoading){
             return (
-              <div className = 'loading-button'>
-                  <Button fluid className = 'loading-button-object'>Submitting...</ Button>
-              </div>
+              <form className = 'input-form' onSubmit = {this.handleSubmit}>
+                  <p className = 'input-title'>Subscribe for free marketing tips</p>
+                  <div className ='input-email'>
+                      <Input
+                          fluid
+                          placeholder='Email Address'
+                          onChange = {this.handleChange}
+                          />
+                  </div>
+                  <div className = 'input-interest'>
+                      <Dropdown
+                          options = {options}
+                          fluid
+                          selection
+                          onChange = {this.handleChange}
+                          />
+                  </div>
+                  <div className = 'loading-button'>
+                      <Button fluid className = 'loading-button-object'>Submitting...</ Button>
+                  </div>
+              </form>
             )
         }
 
@@ -100,8 +118,7 @@ class InputContainer extends Component {
             )
         }
 
-        return(
-
+        return (
             <form className = 'input-form' onSubmit = {this.handleSubmit}>
                 <p className = 'input-title'>Subscribe for free marketing tips</p>
                 <div className = {this.state.emailShake ? 'shake input-email': 'input-email'}>
